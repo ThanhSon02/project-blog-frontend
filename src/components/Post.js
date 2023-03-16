@@ -1,22 +1,18 @@
-function Post() {
+import { formatISO9075 } from "date-fns";
+
+function Post({ title, summary, cover, createdAt, author, content }) {
     return (
         <div className="post">
-            <img
-                src="https://d1iv5z3ivlqga1.cloudfront.net/wp-content/uploads/2021/11/11163712/tao-branch-trong-git-2.png"
-                alt=""
-            />
+            <img src={"http://localhost:4000/" + cover} alt="" />
             <div className="content">
-                <h2>Hướng dẫn cách tạo branch trong Git</h2>
+                <h2>{title}</h2>
                 <p className="info">
                     <a href="" className="author">
-                        David
+                        {author.username}
                     </a>
-                    <time>13-3-2023 9:37</time>
+                    <time>{formatISO9075(new Date(createdAt))}</time>
                 </p>
-                <p className="summary">
-                    Làm việc trực tiếp trong branch (nhánh) chính của một
-                    repository trên GitHub sẽ vô cùng nguy hiểm.
-                </p>
+                <p className="summary">{summary}</p>
             </div>
         </div>
     );
