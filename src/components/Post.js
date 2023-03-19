@@ -7,7 +7,7 @@ function Post({ _id, title, summary, cover, createdAt, author, content }) {
             <Link to={`/post/${_id}`}>
                 <img src={"http://localhost:4000/" + cover} alt="" />
             </Link>
-            <div className="content">
+            <div className="texts">
                 <Link to={`/post/${_id}`}>
                     <h2>{title}</h2>
                 </Link>
